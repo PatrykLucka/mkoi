@@ -6,6 +6,7 @@
     <ul class="container algorithms">
         <li v-bind:class="{ 'active': $route.path.toString() === '/Caesar' }"><router-link to="/Caesar">Szyfr Cezara</router-link></li>
         <li v-bind:class="{ 'active': $route.path.toString() === '/Vigenere' }"><router-link to="/Vigenere">Szyfr Vigenere</router-link></li>
+        <li v-bind:class="{ 'active': $route.path.toString() === '/AtBash' }"><router-link to="/AtBash">Szyfr AtBash</router-link></li>
     </ul>
   </div>    
 </template>

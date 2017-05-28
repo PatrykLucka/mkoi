@@ -1,14 +1,12 @@
 <template>
   <div class="card row">
-    <h1>Narzędzie szyfrujące Szyfrem Cezara</h1>
+    <h1>Narzędzie szyfrujące Szyfrem AtBash</h1>
     <div class="col-md-4 col-xs-12">
       <h3>Tekst do zaszyfrowania</h3>
       <textarea v-model="text" cols="30" rows="10"></textarea>
     </div>
     <div class="col-md-4 col-xs-12">
-      <h3>Przesunięcie</h3>
-      <input type="number" min="0" max="26" v-model="cipherMove">
-      <button v-on:click="cipher()">Szyfruj</button>
+      <button class="decipher" v-on:click="cipher()">Szyfruj</button>
     </div>
     <div class="col-md-4 col-xs-12">
       <h3>Zaszyfrowany tekst</h3>
@@ -19,10 +17,10 @@
 
 <script>
 export default {
-  name: 'caesar-tool',
+  name: 'atbash-tool',
   data () {
     return {
-      msg: 'Narzędzie do Szyfru Cezara',
+      msg: 'Narzędzie do Szyfru AtBash',
       text: '',
       cipherMove: 0,
       cipherText: ''
@@ -41,11 +39,8 @@ export default {
             // Checks if character lies between A-Z
             if (x < 65 || x > 90) {
               return String.fromCharCode(x) // Return un-converted character
-            } else if (x < (91 - vm.cipherMove)) { // N = ASCII 78, if the character code is less than 78, shift forward
-              return String.fromCharCode(parseInt(x) + parseInt(vm.cipherMove))
             }
-            // Otherwise shift backward
-            return String.fromCharCode(parseInt(x) - (26 - parseInt(vm.cipherMove)))
+            return String.fromCharCode(91 - parseInt(x) + 64)
           }).join('')  // Rejoin the array into a string
     }
   }

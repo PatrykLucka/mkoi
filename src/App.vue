@@ -3,6 +3,7 @@
     <ul v-if="$route.path !== '/'" class="container algorithms">
       <li v-bind:class="{ 'active': $route.path.toString() === '/Caesar' }"><router-link to="/Caesar">Szyfr Cezara</router-link></li>
       <li v-bind:class="{ 'active': $route.path.toString() === '/Vigenere' }"><router-link to="/Vigenere">Szyfr Vigenere</router-link></li>
+      <li v-bind:class="{ 'active': $route.path.toString() === '/AtBash' }"><router-link to="/AtBash">Szyfr AtBash</router-link></li>
     </ul>
     <router-view></router-view>
   </div>
@@ -32,6 +33,18 @@ h1, h2, h3, h4, h5, h6{
 #app a{
   color: #de4f4f;
   height: 62px;
+}
+
+button{
+  border: 1px solid #de4f4f;  
+  background-color: white;
+  padding: 10px 20px;
+  color: #de4f4f !important;
+  transition: .6s all ease; 
+}
+button:hover{
+  background-color: #de4f4f;
+  color: white !important;
 }
 
 .algorithms li {

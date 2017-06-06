@@ -1,6 +1,6 @@
 <template>
   <div class="card">
-    <h5>Przykład</h5>
+    <h2>Przykład</h2>
     {{ msg }}
     <table class="contenttable">
       <tbody><tr>
